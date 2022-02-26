@@ -1,0 +1,106 @@
+2022-02-26 04:51:04,155 12200 INFO ? odoo: Odoo version 14.0-20220226 
+2022-02-26 04:51:04,156 12200 INFO ? odoo: Using configuration file at D:\Odoo_Framework-Community\Odoo14\server\odoo.conf 
+2022-02-26 04:51:04,156 12200 INFO ? odoo: addons paths: ['D:\\Odoo_Framework-Community\\Odoo14\\server\\odoo\\addons', 'c:\\users\\han zaw\\appdata\\local\\openerp s.a\\odoo\\addons\\14.0', 'd:\\odoo_framework-community\\odoo14\\server\\odoo\\addons'] 
+2022-02-26 04:51:04,156 12200 INFO ? odoo: database: odoo14@localhost:5432 
+2022-02-26 04:51:04,700 12200 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at D:\Odoo_Framework-Community\Odoo14\thirdparty\wkhtmltopdf.exe 
+2022-02-26 04:51:05,063 12200 INFO ? odoo.service.server: Initiating shutdown 
+2022-02-26 04:51:05,064 12200 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2022-02-26 04:51:06,679 7968 INFO ? odoo: Odoo version 14.0-20220226 
+2022-02-26 04:51:06,679 7968 INFO ? odoo: Using configuration file at D:\Odoo_Framework-Community\Odoo14\server\odoo.conf 
+2022-02-26 04:51:06,679 7968 INFO ? odoo: addons paths: ['D:\\Odoo_Framework-Community\\Odoo14\\server\\odoo\\addons', 'c:\\users\\han zaw\\appdata\\local\\openerp s.a\\odoo\\addons\\14.0', 'd:\\odoo_framework-community\\odoo14\\server\\odoo\\addons'] 
+2022-02-26 04:51:06,679 7968 INFO ? odoo: database: odoo14@localhost:5432 
+2022-02-26 04:51:06,863 7968 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at D:\Odoo_Framework-Community\Odoo14\thirdparty\wkhtmltopdf.exe 
+2022-02-26 04:51:06,981 7968 INFO ? odoo.service.server: HTTP service (werkzeug) running on DESKTOP-NBDL4EK:8069 
+2022-02-26 04:51:50,450 7968 INFO ? odoo.http: HTTP Configuring static files 
+2022-02-26 04:51:50,497 7968 INFO ? odoo.sql_db: Connection to the database failed 
+2022-02-26 04:51:50,498 7968 INFO ? werkzeug: 127.0.0.1 - - [26/Feb/2022 04:51:50] "GET / HTTP/1.1" 500 - 0 0.000 0.041
+2022-02-26 04:51:50,502 7968 ERROR ? werkzeug: Error on request:
+Traceback (most recent call last):
+  File "D:\Odoo_Framework-Community\Odoo14\python\lib\site-packages\werkzeug\serving.py", line 306, in run_wsgi
+    execute(self.server.app)
+  File "D:\Odoo_Framework-Community\Odoo14\python\lib\site-packages\werkzeug\serving.py", line 294, in execute
+    application_iter = app(environ, start_response)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\service\server.py", line 441, in app
+    return self.app(e, s)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\service\wsgi_server.py", line 113, in application
+    return application_unproxied(environ, start_response)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\service\wsgi_server.py", line 88, in application_unproxied
+    result = odoo.http.root(environ, start_response)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\http.py", line 1307, in __call__
+    return self.dispatch(environ, start_response)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\http.py", line 1273, in __call__
+    return self.app(environ, start_wrapped)
+  File "D:\Odoo_Framework-Community\Odoo14\python\lib\site-packages\werkzeug\middleware\shared_data.py", line 220, in __call__
+    return self.app(environ, start_response)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\http.py", line 1458, in dispatch
+    self.setup_db(httprequest)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\http.py", line 1364, in setup_db
+    httprequest.session.db = db_monodb(httprequest)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\http.py", line 1546, in db_monodb
+    dbs = db_list(True, httprequest)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\http.py", line 1513, in db_list
+    dbs = odoo.service.db.list_dbs(force)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\service\db.py", line 384, in list_dbs
+    with closing(db.cursor()) as cr:
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\sql_db.py", line 676, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\sql_db.py", line 248, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\sql_db.py", line 559, in _locked
+    return fun(self, *args, **kwargs)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\sql_db.py", line 627, in borrow
+    **connection_info)
+  File "D:\Odoo_Framework-Community\Odoo14\python\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "odoo14" - - -
+2022-02-26 04:51:50,584 7968 INFO ? odoo.sql_db: Connection to the database failed 
+2022-02-26 04:51:50,585 7968 INFO ? werkzeug: 127.0.0.1 - - [26/Feb/2022 04:51:50] "GET /favicon.ico HTTP/1.1" 500 - 0 0.000 0.036
+2022-02-26 04:51:50,592 7968 ERROR ? werkzeug: Error on request:
+Traceback (most recent call last):
+  File "D:\Odoo_Framework-Community\Odoo14\python\lib\site-packages\werkzeug\serving.py", line 306, in run_wsgi
+    execute(self.server.app)
+  File "D:\Odoo_Framework-Community\Odoo14\python\lib\site-packages\werkzeug\serving.py", line 294, in execute
+    application_iter = app(environ, start_response)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\service\server.py", line 441, in app
+    return self.app(e, s)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\service\wsgi_server.py", line 113, in application
+    return application_unproxied(environ, start_response)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\service\wsgi_server.py", line 88, in application_unproxied
+    result = odoo.http.root(environ, start_response)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\http.py", line 1307, in __call__
+    return self.dispatch(environ, start_response)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\http.py", line 1273, in __call__
+    return self.app(environ, start_wrapped)
+  File "D:\Odoo_Framework-Community\Odoo14\python\lib\site-packages\werkzeug\middleware\shared_data.py", line 220, in __call__
+    return self.app(environ, start_response)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\http.py", line 1458, in dispatch
+    self.setup_db(httprequest)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\http.py", line 1364, in setup_db
+    httprequest.session.db = db_monodb(httprequest)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\http.py", line 1546, in db_monodb
+    dbs = db_list(True, httprequest)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\http.py", line 1513, in db_list
+    dbs = odoo.service.db.list_dbs(force)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\service\db.py", line 384, in list_dbs
+    with closing(db.cursor()) as cr:
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\sql_db.py", line 676, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\sql_db.py", line 248, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\sql_db.py", line 559, in _locked
+    return fun(self, *args, **kwargs)
+  File "D:\Odoo_Framework-Community\Odoo14\server\odoo\sql_db.py", line 627, in borrow
+    **connection_info)
+  File "D:\Odoo_Framework-Community\Odoo14\python\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "odoo14" - - -
+2022-02-26 05:13:51,277 7968 INFO ? odoo.service.server: Initiating shutdown 
+2022-02-26 05:13:51,279 7968 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2022-02-26 05:14:01,219 5988 INFO ? odoo: Odoo version 14.0-20220226 
+2022-02-26 05:14:01,219 5988 INFO ? odoo: Using configuration file at D:\Odoo_Framework-Community\Odoo14\server\odoo.conf 
+2022-02-26 05:14:01,219 5988 INFO ? odoo: addons paths: ['D:\\Odoo_Framework-Community\\Odoo14\\server\\odoo\\addons', 'c:\\users\\han zaw\\appdata\\local\\openerp s.a\\odoo\\addons\\14.0', 'd:\\odoo_framework-community\\odoo14\\server\\odoo\\addons'] 
+2022-02-26 05:14:01,219 5988 INFO ? odoo: database: odoo14@localhost:5432 
+2022-02-26 05:14:01,438 5988 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at D:\Odoo_Framework-Community\Odoo14\thirdparty\wkhtmltopdf.exe 
+2022-02-26 05:14:01,594 5988 INFO ? odoo.service.server: HTTP service (werkzeug) running on DESKTOP-NBDL4EK:8069 
+2022-02-26 05:14:59,396 5988 INFO ? odoo.service.server: Initiating shutdown 
+2022-02-26 05:14:59,396 5988 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
