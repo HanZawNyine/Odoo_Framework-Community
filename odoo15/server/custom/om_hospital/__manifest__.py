@@ -9,7 +9,9 @@
     'category': 'Productivity',
     'website': 'https://www.hanzawnyine.com',
     'depends': [],
-    'data': [],
+    'data': [
+        'views/patient.xml'
+    ],
     'demo': [],
     'installable': True,
     'application': True,
