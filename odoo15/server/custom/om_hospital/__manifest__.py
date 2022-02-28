@@ -8,7 +8,10 @@
     'description': """Hospital Management Software""",
     'category': 'Productivity',
     'website': 'https://www.hanzawnyine.com',
-    'depends': ['sale'],
+    'depends': [
+        'sale',
+        'mail'
+    ],
     'data': [
         'views/patient.xml',
         'views/sale.xml',

@@ -15,9 +15,15 @@
                         <div t-attf-class="oe_kanban_global_click">
                             <div class="oe_kanban_details">
                                 <ul>
-                                   <li>Name : <field name="name"/></li>
-                                    <li>Age : <field name="age"/></li>
-                                    <li>Gender : <field name="gender"/></li>
+                                    <li>Name :
+                                        <field name="name"/>
+                                    </li>
+                                    <li>Age :
+                                        <field name="age"/>
+                                    </li>
+                                    <li>Gender :
+                                        <field name="gender"/>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -57,6 +63,11 @@
                         </group>
                     </group>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
             </form>
         </field>
     </record>
