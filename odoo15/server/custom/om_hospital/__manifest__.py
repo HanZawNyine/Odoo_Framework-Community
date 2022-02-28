@@ -10,7 +10,8 @@
     'website': 'https://www.hanzawnyine.com',
     'depends': [],
     'data': [
-        'views/patient.xml'
+        'views/patient.xml',
+        'security/ir.model.access.csv',
     ],
     'demo': [],
     'installable': True,

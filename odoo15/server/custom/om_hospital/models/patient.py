@@ -8,7 +8,7 @@ class HospitalPatient(models.Model):
 
     name = fields.Char(string='Name', required=True, translate=True)
     age = fields.Char(string='Age', required=True, translate=True)
-    type = fields.Selection([
+    gender = fields.Selection([
         ('male', 'Male'),
         ('female', 'Female'),
         ('other', 'Other'),
