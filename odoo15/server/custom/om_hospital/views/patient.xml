@@ -52,7 +52,15 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <field name="state" widget="statusbar" statusbar_visible="draft,done,confirm" options="{'clickable':'1'}"/>
+                    <button name="action_confirm" id="button_confirm" string="Confirm"
+                            class="btn-primary" type="object" states="draft"/>
+                    <button name="action_done" id="button_done" string="Mark as Done"
+                            class="btn-primary" type="object" states="confirm"/>
+                    <button name="action_draft" id="button_draft" string="Set To Draft"
+                            class="btn-primary" type="object" states="cancel"/>
+                    <button name="action_cancel" id="button_cancel" string="Cancel"
+                            states="done" type="object"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,done,confirm"/>
                 </header>
                 <sheet>
                     <group>
