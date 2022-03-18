@@ -33,12 +33,13 @@
         </field>
     </record>
 
-    <record id="patient_tree" model="ir.ui.view">
+    <record id="view_patient_tree" model="ir.ui.view">
         <field name="name">hospital.patient.tree</field>
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
+                <field name="responsible_id"/>
                 <field name="age"/>
                 <field name="gender"/>
                 <field name="state"/>
@@ -66,6 +67,7 @@
                     <group>
                         <group>
                             <field name="name"/>
+                             <field name="responsible_id"/>
                             <field name="age"/>
                         </group>
                         <group>
