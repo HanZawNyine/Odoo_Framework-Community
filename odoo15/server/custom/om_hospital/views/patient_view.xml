@@ -59,10 +59,10 @@
                     <button name="action_done" id="button_done" string="Mark as Done"
                             class="btn-primary" type="object" states="confirm"/>
                     <button name="action_draft" id="button_draft" string="Set To Draft"
-                            class="btn-primary" type="object" states="cancel"/>
+                            class="btn-primary" type="object" states="cancel,done"/>
                     <button name="action_cancel" id="button_cancel" string="Cancel"
                             confirm="Are you sure that you need to Cancel ?"
-                            states="done" type="object"/>
+                            states="done,draft,confirm" type="object"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,done,confirm"/>
                 </header>
                 <sheet>

@@ -17,6 +17,8 @@
         'views/kid_view.xml',
         'views/patient_gender_view.xml',
         'views/sale.xml',
+        'views/appointment_view.xml',
+
         'security/ir.model.access.csv',
         'data/data.xml'
     ],
