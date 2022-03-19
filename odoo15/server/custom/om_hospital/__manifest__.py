@@ -13,7 +13,8 @@
         'mail'
     ],
     'data': [
-        'views/patient.xml',
+        'views/patient_view.xml',
+        'views/kid_view.xml',
         'views/sale.xml',
         'security/ir.model.access.csv',
         'data/data.xml'

@@ -129,18 +129,18 @@
     </record>
 
     <!-- Top menu item -->
-    <menuitem id="hospital_root"
+    <menuitem id="menu_hospital_root"
               name="Hospital"
               sequence="10"/>
 
-    <menuitem id="hospital_patient_root"
+    <menuitem id="menu_hospital_patient_root"
               name="Patients"
-              parent="hospital_root"
+              parent="menu_hospital_root"
               sequence="10"/>
 
-    <menuitem id="hospital_patient"
+    <menuitem id="menu_hospital_patient"
               name="Patients"
               action="action_patient"
-              parent="hospital_patient_root"
+              parent="menu_hospital_patient_root"
               sequence="10"/>
 </odoo>
