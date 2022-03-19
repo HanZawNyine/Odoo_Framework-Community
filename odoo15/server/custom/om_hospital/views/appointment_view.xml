@@ -8,6 +8,8 @@
             <tree>
                 <field name="name"/>
                 <field name="patient_id"/>
+                <field name="age"/>
+                <field name="gender"/>
                 <field name="state"/>
                 <field name="date_appointment"/>
                 <field name="date_checkup"/>
@@ -42,6 +44,7 @@
                     <group>
                         <group>
                             <field name="patient_id"/>
+                            <field name="gender"/>
                             <field name="age"/>
                         </group>
                         <group>

@@ -10,10 +10,15 @@ class HospitalAppointment(models.Model):
     name = fields.Char(string='Order Reference', required=True, translate=True, copy=False, readonly=True,
                        default=lambda self: _('New'))
     patient_id = fields.Many2one(comodel_name='hospital.patient', string='Patient', required=True)
-    age = fields.Integer(string='Age',related="patient_id.age", tracking=True)
+    age = fields.Integer(string='Age', related="patient_id.age", tracking=True)
+    gender = fields.Selection([
+        ('male', 'Male'),
+        ('female', 'Female'),
+        ('other', 'Other'),
+    ], required=True, default='other', tracking=True)
     state = fields.Selection([('draft', 'Draft'), ('confirm', 'Confirmed'),
                               ('done', 'Done'), ('cancel', 'Cancel')],
-                             default='draft', string="Status", tracking=True)
+                             string="Status", tracking=True)
     note = fields.Text(string='Description', tracking=True)
     date_appointment = fields.Date(string="Date")
     date_checkup = fields.Datetime(string="Checkup")
@@ -39,3 +44,15 @@ class HospitalAppointment(models.Model):
             vals['name'] = self.env['ir.sequence'].next_by_code('hospital.appointment') or _('New')
         res = super(HospitalAppointment, self).create(vals)
         return res
+
+    @api.onchange('patient_id')
+    def onchange_patient_id(self):
+        if self.patient_id:
+            if self.patient_id.gender:
+                self.gender = self.patient_id.gender
+            if self.patient_id.note:
+                self.note = self.patient_id.note
+            else:
+                self.note = ''
+        else:
+            self.gender = ''
