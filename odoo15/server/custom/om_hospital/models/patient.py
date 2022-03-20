@@ -20,6 +20,14 @@ class HospitalPatient(models.Model):
                               ('done', 'Done'), ('cancel', 'Cancel')],
                              default='draft', string="Status", tracking=True)
     responsible_id = fields.Many2one(comodel_name='res.partner', string='Responsible')
+    appointment_count = fields.Integer(string='Appointment Count',compute='_compute_appointment_count')
+
+    def _compute_appointment_count(self):
+        appointment_count = self.env['hospital.appointment'].search_count([('patient_id','=',self.id)])
+        if appointment_count:
+            self.appointment_count = appointment_count
+        else:
+            self.appointment_count = 0
 
     def action_confirm(self):
         self.state = 'confirm'
