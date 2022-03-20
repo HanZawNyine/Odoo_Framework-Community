@@ -15,10 +15,11 @@ class HospitalAppointment(models.Model):
         ('male', 'Male'),
         ('female', 'Female'),
         ('other', 'Other'),
-    ], required=True, default='other', tracking=True)
+    ], required=True, tracking=True)
     state = fields.Selection([('draft', 'Draft'), ('confirm', 'Confirmed'),
                               ('done', 'Done'), ('cancel', 'Cancel')],
-                             string="Status", tracking=True)
+                             default='draft'
+                             , string="Status", tracking=True)
     note = fields.Text(string='Description', tracking=True)
     date_appointment = fields.Date(string="Date")
     date_checkup = fields.Datetime(string="Checkup")

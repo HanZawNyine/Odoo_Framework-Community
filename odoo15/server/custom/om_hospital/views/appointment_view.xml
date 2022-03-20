@@ -22,9 +22,9 @@
         <field name="model">hospital.appointment</field>
         <field name="arch" type="xml">
             <form>
-                <header>
+                 <header>
                     <button name="action_confirm" id="button_confirm" string="Confirm"
-                            confirm="Are you sure that you need to confirm this record?"
+                             confirm="Are you sure that you need to confirm this record?"
                             class="btn-primary" type="object" states="draft"/>
                     <button name="action_done" id="button_done" string="Mark as Done"
                             class="btn-primary" type="object" states="confirm"/>
@@ -44,7 +44,7 @@
                     <group>
                         <group>
                             <field name="patient_id"/>
-                            <field name="gender"/>
+                            <field name="gender" readonly="1" force_save="1"/>
                             <field name="age"/>
                         </group>
                         <group>
