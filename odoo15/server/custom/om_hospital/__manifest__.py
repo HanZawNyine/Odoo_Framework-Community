@@ -13,6 +13,8 @@
         'mail'
     ],
     'data': [
+        'wizard/create_appointment_view.xml',
+        
         'views/patient_view.xml',
         'views/kid_view.xml',
         'views/patient_gender_view.xml',
