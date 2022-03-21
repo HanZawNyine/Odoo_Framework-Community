@@ -51,12 +51,13 @@ tsconfig.json
 
 
 ********************************************************
-setup
-odoo
-doc
-debian
-addons
 .github
+.idea
+addons
+debian
+doc
+odoo
+setup
 .mailmap
 CONTRIBUTING.md
 COPYRIGHT
@@ -66,6 +67,7 @@ odoo.conf
 odoo.log
 odoo-bin
 README.md
-requirements.txt
 SECURITY.md
-
+requirements.txt
+setup.cfg
+setup.py
