@@ -1,6 +1,5 @@
-nssm
-python
-thirdparty
-vcredist
+nssm/
+python/
+thirdparty/
+vcredist/
 Uninstall.exe
-.idea
