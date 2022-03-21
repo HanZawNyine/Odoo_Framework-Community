@@ -64,6 +64,8 @@
                     <button name="action_cancel" id="button_cancel" string="Cancel"
                             confirm="Are you sure that you need to Cancel ?"
                             states="done,draft,confirm" type="object"/>
+                    <button name="%(action_create_appointment)d" id="button_create_appointment" string="Create Appointment"
+                            class="btn-primary" type="action"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,done,confirm"/>
                 </header>
                 <sheet>
