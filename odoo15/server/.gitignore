@@ -68,4 +68,10 @@ odoo-bin
 README.md
 requirements.txt
 SECURITY.md
+
+../nssm
+../python
+../thirdparty
+../vcredist
 ../Uninstall.exe
+../.idea
