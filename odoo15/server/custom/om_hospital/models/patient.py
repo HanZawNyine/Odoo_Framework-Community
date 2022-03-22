@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import api, fields, models, _, tools,api
+from odoo import api, fields, models, _, tools, api
 
 
 class HospitalPatient(models.Model):
@@ -8,8 +8,9 @@ class HospitalPatient(models.Model):
     _description = "Hospital Patient"
 
     name = fields.Char(string='Name', required=True, translate=True, tracking=True)
-    reference = fields.Char(string='Reference', required=True, translate=True,copy=False,readonly=True,default=lambda self: _('New'))
-    age = fields.Integer(string='Age',tracking=True)
+    reference = fields.Char(string='Reference', required=True, translate=True, copy=False, readonly=True,
+                            default=lambda self: _('New'))
+    age = fields.Integer(string='Age', tracking=True)
     gender = fields.Selection([
         ('male', 'Male'),
         ('female', 'Female'),
@@ -20,11 +21,11 @@ class HospitalPatient(models.Model):
                               ('done', 'Done'), ('cancel', 'Cancel')],
                              default='draft', string="Status", tracking=True)
     responsible_id = fields.Many2one(comodel_name='res.partner', string='Responsible')
-    appointment_count = fields.Integer(string='Appointment Count',compute='_compute_appointment_count')
+    appointment_count = fields.Integer(string='Appointment Count', compute='_compute_appointment_count')
 
     def _compute_appointment_count(self):
         for rec in self:
-            appointment_count = self.env['hospital.appointment'].search_count([('patient_id','=',rec.id)])
+            appointment_count = self.env['hospital.appointment'].search_count([('patient_id', '=', rec.id)])
             rec.appointment_count = appointment_count
 
     def action_confirm(self):
@@ -48,8 +49,14 @@ class HospitalPatient(models.Model):
         # print("success override create method")
         if not vals.get("note"):
             vals["note"] = 'New Patient'
-        if vals.get('reference',_('New')) == _("New"):
+        if vals.get('reference', _('New')) == _("New"):
             vals['reference'] = self.env['ir.sequence'].next_by_code('hospital.patient') or _('New')
-        res = super(HospitalPatient,self).create(vals)
+        res = super(HospitalPatient, self).create(vals)
         return res
 
+    @api.model
+    def default_get(self, fields):
+        result = super(HospitalPatient, self).default_get(fields)
+        result['gender'] = 'male'
+        result['note'] = "TEst Default Get Method"
+        return result
